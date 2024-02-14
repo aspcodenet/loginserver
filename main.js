@@ -19,5 +19,5 @@ app.use(session({
     secret: 'my-secret-key',
     resave: false,
     saveUninitialized: true,
-    // cookie: { secure: true }
+    // cookie: { secure: true } HTTPS
 }));

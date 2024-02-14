@@ -21,3 +21,10 @@ app.use(session({
     saveUninitialized: true,
     // cookie: { secure: true } HTTPS
 }));
+
+
+
+app.listen(port, async () => {
+    await migrationhelper.migrate()
+    console.log(`Example app listening2 on port ${port}`)
+})

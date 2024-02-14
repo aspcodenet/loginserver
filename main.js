@@ -5,7 +5,8 @@ const port = 3000 // "Radiofrekvens"
 const session = require('express-session');
 
 const { UserAccount } = require('./models')
-//const userController  = require('./controllers/userController.js')
+//const  { onHej, onLogin, onCreateUser } = require('./controllers/userController.js')
+const userController  = require('./controllers/userController.js')
 const migrationhelper = require('./migrationhelper')
 
 app.use(express.json())
@@ -15,6 +16,8 @@ app.use(cors({
     credentials:true
 }))
 
+
+
 app.use(session({
     secret: 'my-secret-key',
     resave: false,
@@ -22,6 +25,10 @@ app.use(session({
     // cookie: { secure: true } HTTPS
 }));
 
+// app.get('/hej',onHej)
+app.get('/hej', userController.onHej)
+app.post('/useraccount', userController.onCreateUser)
+// app.post('/useraccount',onCreateUser)
 
 
 app.listen(port, async () => {

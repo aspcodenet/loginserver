@@ -25,10 +25,14 @@ app.use(session({
     // cookie: { secure: true } HTTPS
 }));
 
+
+
 // app.get('/hej',onHej)
 app.get('/hej', userController.onHej)
-app.post('/useraccount', userController.onCreateUser)
+app.post('/api/useraccount', userController.onCreateUser)
 // app.post('/useraccount',onCreateUser)
+
+app.post('/api/signIn',userController.onLogin);
 
 
 app.listen(port, async () => {

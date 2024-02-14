@@ -1,9 +1,17 @@
 const { UserAccount } = require('../models')
 const bcrypt = require('bcrypt')
 
-function onHej(req,res){
+async function onHej(req,res){
     // Cookien och vem är inloggad ???  ->  req
-    res.send('Hej2')    
+
+    // Ta den inloggade och hämta från DB
+    //
+    const id = req.session.userId
+    const user = await UserAccount.findOne({
+        where: {id}
+    });
+    
+    res.json(user)    
 }
 
 async function onLogin(req,res){

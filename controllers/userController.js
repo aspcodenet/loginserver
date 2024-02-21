@@ -6,12 +6,16 @@ async function onHej(req,res){
 
     // Ta den inloggade och hämta från DB
     //
-    const id = req.session.userId
-    const user = await UserAccount.findOne({
-        where: {id}
-    });
+    res.json(req.session)    
+    // const id = req.session.userId
+    // if(id == undefined){
+    //     res.status(401).json('Login failed');
+    // }
+    // const user = await UserAccount.findOne({
+    //     where: {id}
+    // });
     
-    res.json(user)    
+    // res.json(user)    
 }
 
 async function onLogin(req,res){

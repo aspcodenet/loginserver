@@ -2,12 +2,21 @@
 GET http://localhost:3000/hej
 
 
+### get sida
+GET http://localhost:3000/sida?name=Stefan
+
+
+### get 2
+GET http://localhost:3000/users?sortOrder=asc&sortCol=name&q=ste
+
+
+
 ### Signup Create user 
 POST http://localhost:3000/api/useraccount
 Content-Type: application/json; charset=utf-8
 
 {
-"firstName":"Stefan", 
-"email":"hej@hopp.se", 
+"firstName":"Lisa", 
+"email":"lisa@hopp.se", 
 "password":"tjena"
 }
